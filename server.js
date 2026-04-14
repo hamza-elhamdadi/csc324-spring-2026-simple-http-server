@@ -2,7 +2,7 @@
     IMPORTANT: This code is just for demonstration purposes.
         We will not use the http module for the rest of this class.
         We'll use express (very soon)
-        Express will look similar, but will abstract away the manual details
+        Express will look similar, but will abstract away the low-level details
 */
 import http from 'http';
 
