@@ -24,5 +24,5 @@ server.on('request', function(req, res){
 }) 
 
 server.listen(3000, function(){
-    console.log('Server running');
+    console.log('Server listening on port 3000');
 });
