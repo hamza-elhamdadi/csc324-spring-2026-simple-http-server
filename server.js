@@ -1,28 +1,20 @@
-/* 
-    IMPORTANT: This code is just for demonstration purposes.
-        We will not use the http module for the rest of this class.
-        We'll use express (very soon)
-        Express will look similar, but will abstract away the low-level details
-*/
-import http from 'http';
+import express from 'express';
 
-const server = http.createServer();
+const app = express();
 
-server.on('request', function(req, res){
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/html');
-    res.end(`
-        <!DOCTYPE html>
-        <html>
-            <body>
-                <img src="https://cataas.com/cat" />
-            </body>
-        </html>
-        `);
+app.get('/', function(req, res){
+    res.send('<body>one html page</body>');
+})
 
-    
-}) 
+app.get('/cat', function(req, res){
+    res.send('<body><img src="https://cataas.com/cat" /></body>');
+})
 
-server.listen(3000, function(){
+app.get('/data', function(req, res){
+    const obj = ['json', 'data'];
+    res.json(obj);
+});
+
+app.listen(3000, function(){
     console.log('Server listening on port 3000');
 });
